@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Character encoding and viewport settings for responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search Engine</title>
+    <!-- Link to external CSS stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <!-- Main container for the entire application -->
+ <div class="container">
+    <!-- Main title of the application -->
+    <h1 class="main-title">Movie Search Engine</h1>
+    
+    <!-- Search section: input field and search button -->
+    <div class="search-container">
+        <!-- Input field where users type the movie name they want to search for -->
+        <input type="text" placeholder="Explore movies" id="movie-name" value="">
+        <!-- Button to trigger the movie search -->
+        <button id="search-btn">Search</button>
+    </div>
+    
+    <!-- Container for displaying the main movie search result -->
+    <div id="result"></div>
+    
+    <!-- Section that displays recommended movies similar to the searched movie -->
+    <div class="similar-section">
+        <h2>Recommended to You</h2>
+        <!-- Grid container for displaying similar movie cards -->
+        <div id="similar-results" class="similar-grid"></div>
+    </div>
+ </div>   
+</body>
+<!-- Link to external JavaScript file -->
+<script src="script.js"></script>
+</html>

@@ -1,0 +1,266 @@
+/* ============================================
+   MOVIE SEARCH ENGINE - CSS STYLESHEET
+   ============================================ */
+
+/* ============================================
+   UNIVERSAL RESET STYLES
+   ============================================ */
+/* Remove default margins and padding from all elements */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ============================================
+   BODY AND HTML STYLES
+   ============================================ */
+/* Set full height and width, apply font, add background gradient */
+html, body{
+    height: 100%;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(rgb(4, 67, 14) , rgb(109, 9, 9) );  /* Green to red gradient */
+}
+
+/* Center the page content vertically and horizontally */
+body{
+    display: flex;
+    justify-content: center;   /* Center horizontally */
+    align-items: center;       /* Center vertically */
+    padding: 1.5rem;
+}
+
+/* ============================================
+   MAIN CONTAINER
+   ============================================ */
+/* Main wrapper for all content - responsive width with shadow */
+.container{
+    width: min(90vw, 52rem);           /* 90% viewport width or max 52rem, whichever is smaller */
+    background-color: rgb(8, 64, 64);  /* Dark teal background */
+    padding: 2.5rem;                   /* Inner spacing */
+    border-radius: 1rem;               /* Rounded corners */
+    box-shadow: 1.2em 1.9em 3.1em rgba(0, 0, 0, 0.25); /* Subtle shadow effect */
+}
+
+/* ============================================
+   MAIN TITLE
+   ============================================ */
+/* Application heading - prominent and centered */
+.main-title{
+    text-align: center;
+    font-size: 2.4rem;              /* Large heading size */
+    font-weight: 700;               /* Bold weight */
+    margin-bottom: 1.2rem;          /* Space below title */
+    color: #fff;                    /* White text */
+    letter-spacing: 0.04em;         /* Slight letter spacing for elegance */
+    text-transform: uppercase;      /* Make text uppercase */
+    text-shadow: 0 3px 8px rgba(0,0,0,0.25); /* Subtle text shadow for depth */
+}
+
+/* ============================================
+   SEARCH CONTAINER
+   ============================================ */
+/* Layout for search input and button side by side */
+.search-container{
+    display: flex;              /* Arrange items horizontally */
+    gap: 0.75rem;              /* Space between input and button */
+    align-items: center;       /* Vertically center items */
+    justify-content: center;    /* Horizontally center items */
+}
+
+/* ============================================
+   SEARCH INPUT FIELD
+   ============================================ */
+.search-container input{
+    flex: 1;                    /* Take up available space */
+    min-width: 16rem;           /* Minimum width */
+    padding: 1rem 1.2rem;       /* Internal spacing */
+    font-size: 1.05rem;         /* Readable text size */
+    border: 2px solid #ccc;     /* Light gray border */
+    border-radius: 0.6rem;      /* Rounded corners */
+}
+
+/* ============================================
+   SEARCH BUTTON
+   ============================================ */
+.search-container button{
+    padding: 1rem 1.4rem;       /* Internal padding */
+    font-size: 1.05rem;         /* Match input font size */
+    border: none;               /* Remove default border */
+    border-radius: 0.6rem;      /* Rounded corners */
+    background: #0d6efd;        /* Blue background */
+    color: white;               /* White text */
+    cursor: pointer;            /* Show clickable cursor */
+}
+
+/* Focus state for input field (when user clicks on it) */
+.search-container input:focus{
+    outline: none;              /* Remove default outline */
+    border-color: #0d6efd;      /* Change border to blue on focus */
+}
+
+/* ============================================
+   MOVIE RESULTS CONTAINER
+   ============================================ */
+#movie-results{
+    margin-top: 1.25rem;  /* Space above results */
+}
+
+/* ============================================
+   MOVIE CARD (MAIN RESULT)
+   ============================================ */
+/* Card displaying the searched movie's details */
+.movie-card{
+    margin-top: 1.25rem;      /* Space from search section */
+    padding: 1rem;            /* Internal spacing */
+    border-radius: 0.7rem;    /* Rounded corners */
+    background: #f8f9fa;      /* Light gray background */
+    color: #222;              /* Dark text */
+    line-height: 1.6;         /* Readable line spacing */
+}
+
+/* Movie title styling */
+.movie-card h3{
+    margin-bottom: 0.5rem;    /* Space below title */
+    color: #0d6efd;           /* Blue color for title */
+}
+
+/* ============================================
+   MOVIE HEADER (POSTER + INFO)
+   ============================================ */
+/* Layout for poster image and movie information side by side */
+.movie-header{
+    display: flex;            /* Arrange poster and info horizontally */
+    gap: 1rem;                /* Space between poster and text */
+    align-items: flex-start;  /* Align to top */
+    margin-bottom: 0.75rem;   /* Space below this section */
+}
+
+/* ============================================
+   MOVIE POSTER IMAGE
+   ============================================ */
+.movie-poster{
+    width: 120px;             /* Fixed width for poster */
+    height: auto;             /* Maintain aspect ratio */
+    border-radius: 0.5rem;    /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Shadow for depth */
+}
+
+/* ============================================
+   ERROR/MESSAGE STYLING
+   ============================================ */
+/* Style for error messages and notifications */
+.msg{
+    margin-top: 1rem;    /* Space above message */
+    color: white;        /* White text for visibility on dark background */
+    text-align: center;  /* Center align message */
+}
+
+/* ============================================
+   SEARCH CONTAINER (RESPONSIVE LAYOUT)
+   ============================================ */
+/* Use CSS Grid for responsive search layout */
+.search-container{
+    display: grid;
+    grid-template-columns: 9fr 3fr;  /* Input takes 75% width, button takes 25% */
+    gap: 1.1em;                       /* Space between input and button */
+}
+
+/* ============================================
+   SEARCH INPUT AND BUTTON (SHARED STYLES)
+   ============================================ */
+.search-container input,
+ .search-container button{
+    font-size: 1.05rem;     /* Readable font size */
+    outline: none;          /* Remove default focus outline */
+    border-radius: 0.3rem;  /* Slightly rounded corners */
+}
+
+/* ============================================
+   SEARCH INPUT FIELD (UPDATED STYLES)
+   ============================================ */
+.search-container input{
+    background-color: transparent;     /* See-through background */
+    border: 1px solid #a0a0a0;        /* Gray border */
+    padding: 0.7em;                   /* Internal padding */
+    color: white;                     /* White text color */
+}
+
+/* Input focus state - highlight with white border */
+.search-container input:focus{
+    border-color: #fff;  /* White border on focus */
+}
+
+/* ============================================
+   SEARCH BUTTON (UPDATED STYLES)
+   ============================================ */
+.search-container button{
+    background-color: rgb(109, 9, 9);  /* Dark red background */
+    border: none;                       /* Remove border */
+    cursor: pointer;                    /* Show clickable cursor */
+    font-weight: 600;                   /* Slightly bold text */
+}
+
+/* ============================================
+   RECOMMENDED MOVIES SECTION
+   ============================================ */
+/* Container for the "Recommended to You" section */
+.similar-section{
+    margin-top: 1.8rem;                       /* Space from main result */
+    padding-top: 1rem;                        /* Internal top padding */
+    border-top: 1px solid rgba(255,255,255,0.2); /* Subtle separator line */
+}
+
+/* ============================================
+   RECOMMENDED SECTION TITLE
+   ============================================ */
+.similar-section h2{
+    color: #fff;                /* White text */
+    margin-bottom: 0.8rem;      /* Space below title */
+    font-size: 1.1rem;          /* Slightly larger than normal text */
+    text-transform: uppercase;  /* Make text uppercase */
+    letter-spacing: 0.04em;     /* Add letter spacing for style */
+}
+
+/* ============================================
+   SIMILAR MOVIES GRID
+   ============================================ */
+/* Grid layout for displaying 4 recommended movies in a row */
+.similar-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  /* 4 equal columns */
+    gap: 0.8rem;                            /* Space between cards */
+}
+
+/* ============================================
+   SIMILAR MOVIE CARD
+   ============================================ */
+/* Individual card for each recommended movie */
+.similar-card{
+    background: #f8f9fa;      /* Light gray background */
+    border-radius: 0.6rem;    /* Rounded corners */
+    padding: 0.5rem;          /* Small internal padding */
+    text-align: center;       /* Center align content */
+    cursor: pointer;          /* Show clickable cursor (implied by interaction) */
+}
+
+/* ============================================
+   SIMILAR CARD POSTER IMAGE
+   ============================================ */
+.similar-card img{
+    width: 100%;              /* Take full card width */
+    height: 110px;            /* Fixed height for consistency */
+    object-fit: cover;        /* Cover the area while maintaining aspect ratio */
+    border-radius: 0.4rem;    /* Rounded corners */
+    margin-bottom: 0.4rem;    /* Space between image and title */
+}
+
+/* ============================================
+   SIMILAR CARD MOVIE TITLE
+   ============================================ */
+.similar-card p{
+    font-size: 0.9rem;        /* Smaller text for readability */
+    color: #222;              /* Dark text */
+    font-weight: 600;         /* Semi-bold for emphasis */
+}
